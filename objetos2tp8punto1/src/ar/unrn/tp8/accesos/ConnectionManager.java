@@ -43,7 +43,7 @@ public class ConnectionManager {
 	}
 
 	public static Connection getConnection() throws SQLException {
-		if (conn == null) {
+		if (conn == null || conn.isClosed()) {
 			try {
 				connect();
 			} catch (SQLException e) {
